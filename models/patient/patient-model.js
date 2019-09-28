@@ -21,18 +21,17 @@ createPatient = (patient) =>
     });
 
 updatePatient = (patient) =>
-    patientModel.findOneandUpdate({
+    patientModel.findOneAndUpdate({
         _id: patient._id
     }, 
-    { $set: {
-            name: patient.name,
-            temperature: patient.temperature,
-            pulse: patient.pulse,
-            respiration: patient.respiration,
-            oxygen_saturation: patient.oxygen_saturation,
-            created: patient.created,
-            updated: new Date()
-        }
+    {
+        name: patient.name,
+        temperature: patient.temperature,
+        pulse: patient.pulse,
+        respiration: patient.respiration,
+        oxygen_saturation: patient.oxygen_saturation,
+        created: patient.created,
+        updated: new Date()
     });
 
 deletePatient = (patientId) => {

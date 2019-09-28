@@ -20,8 +20,8 @@ createPatient = (patient) =>
         updated: new Date()
     });
 
-updatePatient = (patient, id) =>
-    // console.log(id);
+updatePatient = (patient, id) => {
+    console.log(id);
     patientModel.findOneAndUpdate({
         '_id': id
     }, 
@@ -34,6 +34,7 @@ updatePatient = (patient, id) =>
         created: patient.created,
         updated: new Date()
     });
+}
 
 deletePatient = (patientId) => {
     patientModel.remove({_id: mongoose.Types.ObjectId(String(patientId))});

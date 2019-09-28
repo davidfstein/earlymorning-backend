@@ -21,7 +21,7 @@ createPatient = (patient) =>
     });
 
 updatePatient = (patient) =>
-    patientModel.update({
+    patientModel.findOneandUpdate({
         _id: patient._id
     }, 
     { $set: {

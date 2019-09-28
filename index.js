@@ -17,13 +17,13 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const mongoUser = process.env.RESUME_MONGO_USER;
-const mongoPassword = process.env.RESUME_MONGO_PASSWORD;
-const mongoHost = process.env.RESUME_MONGO_HOST;
-const mongoPort = process.env.RESUME_MONGO_PORT;
-const mongoDb = process.env.RESUME_MONGO_DB;
+const mongoUser = process.env.MONGO_USER;
+const mongoPassword = process.env.MONGO_PASSWORD;
+const mongoHost = process.env.MONGO_HOST;
+const mongoPort = process.env.MONGO_PORT;
+const mongoDb = process.env.MONGO_DB;
 mongoose.connect(`mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDb}`);
 
-// require('./services/post-service')(app);
+require('./services/patient-service')(app);
 
 app.listen(process.env.PORT || 3000)

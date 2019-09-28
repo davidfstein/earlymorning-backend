@@ -20,15 +20,19 @@ createPatient = (patient) =>
         updated: new Date()
     });
 
-updatePatient = (patient, date) =>
+updatePatient = (patient) =>
     patientModel.update({
         _id: patient._id
-    }, {
-        temperature: patient.temperature,
-        pulse: patient.pulse,
-        respiration: patient.respiration,
-        oxygen_saturation: patient.oxygen_saturation,
-        updated: date
+    }, 
+    { $set: {
+            name: patient.name,
+            temperature: patient.temperature,
+            pulse: patient.pulse,
+            respiration: patient.respiration,
+            oxygen_saturation: patient.oxygen_saturation,
+            created: patient.created,
+            updated: new Date()
+        }
     });
 
 deletePatient = (patientId) => {

@@ -4,7 +4,7 @@ const client = new twilio(process.env.TWILLIO_ID, process.env.TWILLIO_TOKEN);
 module.exports = app => {
 
     sendMessage = () => {
-        console.log('hello');
+        console.log(process.env.TWILLIO_ID, process.env.TWILLIO_TOKEN);
         return client.messages.create({
             body: 'Early Morning Notification',
             to: '+16083209137',  // Text this number

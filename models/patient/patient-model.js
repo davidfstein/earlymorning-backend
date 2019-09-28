@@ -20,9 +20,9 @@ createPatient = (patient) =>
         updated: new Date()
     });
 
-updatePatient = (patient) =>
+updatePatient = (patient, id) =>
     patientModel.findOneAndUpdate({
-        _id: patient._id
+        _id: id
     }, 
     {
         name: patient.name,

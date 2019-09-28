@@ -13,7 +13,7 @@ module.exports = app => {
                  .then(patient => res.send(patient));
 
     updatePatient = (req, res) =>
-        patientModel.updatePatient(req.body)
+        patientModel.updatePatient(req.body, req.query.patientId)
             .then(patient => res.send(patient));
 
     deletePatient = (req, res) => {

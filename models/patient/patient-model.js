@@ -21,9 +21,9 @@ createPatient = (patient) =>
     });
 
 updatePatient = (patient, id) =>
-    console.log(id)
+    // console.log(id);
     patientModel.findOneAndUpdate({
-        _id: id
+        '_id': id
     }, 
     {
         name: patient.name,

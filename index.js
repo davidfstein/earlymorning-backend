@@ -26,5 +26,6 @@ const mongoDb = process.env.MONGO_DB;
 mongoose.connect(`mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDb}`);
 
 require('./services/patient-service')(app);
+require('./services/twillio-service')(app);
 
 app.listen(process.env.PORT || 3000)

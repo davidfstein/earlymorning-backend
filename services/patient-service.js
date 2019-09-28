@@ -26,7 +26,7 @@ module.exports = app => {
         patientModel.findPatientById(req.params.patientId)
             .then(patient => res.send(patient));
   
-    app.get('/api/patient', findAllPatient);
+    app.get('/api/patient', findAllPatients);
     app.post('/api/patient', createPatient);
     app.put('/api/patient/:patientId', updatePatient);
     app.delete('/api/patient/:patientId', deletePatient);

@@ -11,6 +11,7 @@ findPatientById = patientId =>
 
 createPatient = (patient) =>
     patientModel.create({
+        name: patient.name,
         temperature: patient.temperature,
         pulse: patient.pulse,
         respiration: patient.respiration,

@@ -22,7 +22,7 @@ createPatient = (patient) =>
 
 updatePatient = (patient, id) => {
     console.log(id);
-    patientModel.findOneAndUpdate({
+    return patientModel.findOneAndUpdate({
         '_id': id
     }, 
     {

@@ -10,7 +10,14 @@ findPatientById = patientId =>
     patientModel.findById(patientId);
 
 createPatient = (patient) =>
-    patientModel.create(patient);
+    patientModel.create({
+        temperature: patient.temperature,
+        pulse: patient.pulse,
+        respiration: patient.respiration,
+        oxygen_saturation: patient.oxygen_saturation,
+        created: new Date(),
+        updated: new Date()
+    });
 
 updatePatient = (patient, date) =>
     patientModel.update({

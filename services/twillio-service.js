@@ -10,7 +10,7 @@ module.exports = app => {
             to: '+16083209137',  // Text this number
             from: '+14242310779' // From a valid Twilio number
         })
-        .then((message) => res.send(200));
+        .then((message) => res.send(message));
     }
     
   
